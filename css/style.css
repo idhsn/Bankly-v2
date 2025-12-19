@@ -322,43 +322,71 @@ body::after {
     font-weight: 500;
 }
 
-/* Login Container */
-.login-container {
-    min-height: 100vh;
+
+/* Move Bankly to the very top and make it bigger */
+.login-container h1 {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    padding-top: 3rem;
+}
+
+/* Center all form elements */
+.login-container form {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    background: var(--bg-primary);
-    position: relative;
-    overflow: hidden;
+    width: 100%;
 }
 
-.login-container::before,
-.login-container::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    animation: blob-float 12s ease-in-out infinite;
+.login-container form label {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
 }
 
-.login-container::before {
-    top: -35%;
-    right: -25%;
-    width: 900px;
-    height: 900px;
-    background: radial-gradient(circle, rgba(157, 78, 221, 0.35) 0%, transparent 70%);
+.login-container form input {
+    width: 100%;
+    max-width: 400px;
 }
 
-.login-container::after {
-    bottom: -35%;
-    left: -25%;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(247, 37, 133, 0.3) 0%, transparent 70%);
-    animation-delay: -6s;
+.login-container form button {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2.5rem;
 }
+
+/* Center error messages */
+.login-container .error {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adjust container padding for better spacing */
+.login-container > div {
+    padding: 3rem 4rem 4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .login-container h1 {
+        font-size: 3rem;
+    }
+    
+    .login-container > div {
+        padding: 2rem;
+    }
+    
+    .login-container form label,
+    .login-container form input,
+    .login-container form button,
+    .login-container .error {
+        max-width: 100%;
+    }
+}
+
+
+
 
 @keyframes blob-float {
     0%, 100% {
